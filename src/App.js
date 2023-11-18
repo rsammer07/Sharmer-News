@@ -6,7 +6,7 @@ function App() {
       <header className="App-header">
       </header>
       <main>
-
+        <h1>Welcome to Sharmer news</h1>
       </main>
     </div>
   );
