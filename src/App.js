@@ -26,10 +26,10 @@ function App() {
         <div><img id='masthead' src={masthead} alt="masthead"/></div>
       </header>
       <nav className="navbar">
-          <NavLink className="text-link"to="/home"><h3 className="link">Home</h3></NavLink>
-          <NavLink className="text-link" to="/politics"><h3 className="link">Politics</h3></NavLink>
-          <NavLink className="text-link" to="/sports"><h3 className="link">Sports</h3></NavLink>
-        </nav>
+        <NavLink activeClassName="active" to="/home"><h3 className="text-link">Home</h3></NavLink>
+        <NavLink activeClassName="active" to="/politics"><h3 className="text-link">Politics</h3></NavLink>
+        <NavLink activeClassName="active" to="/sports"><h3 className="text-link">Sports</h3></NavLink>
+      </nav>
       <body>
         <main>
           {routes}

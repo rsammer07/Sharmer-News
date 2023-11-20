@@ -22,12 +22,13 @@
 
 .App-header {
   background-color: #cecdcd;
+  z-index: 2;
   height: 80px;
-  display: grid;
+  display: flex;
   /* flex-direction: column; */
   grid-column: span 3;
   grid-row: 1;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -39,6 +40,7 @@
 
 #headerLogo {
   width: 100px;
+  /* Colors: ff8d17, 062938 */
 }
 
 @keyframes App-logo-spin {
@@ -61,32 +63,41 @@ aside {
 }
 
 main {
-  position: relative
+  position: relative;
+  padding: 0 15px 0 15px;
 }
 
 nav {
   grid-column: 1;
   grid-row: 2;
-  position: sticky;
-  top: 110px
-  /* color: black;
-  text-decoration: none; */
-}
-
-nav .text-link {
-  color: black;
+  position: fixed;
+  top: 110px;
   text-decoration: none;
+  padding-left: 10px;
 }
 
-nav .link:not(.active):hover {
-  background-color: #cecdcd;
+.text-link {
+  color: #062938;
+  text-decoration: none;
+  /* background-color: #ff8d17; */
 }
 
-.active {
-  background-color: aqua;
+.text-link:hover {
+  background-color: #062938;
+  color: #ff8d17;
+  border-radius: 5px;
 }
 
-@media only screen and ( max-width: 850px){
+.active h3 {
+  background-color: #ff8d17;
+  color: green;
+}
+
+nav .active:hover h3 {
+  background-color: purple;
+}
+
+@media screen and ( max-width: 850px){
   #masthead {
     display: none;
   }
