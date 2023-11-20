@@ -1,0 +1,12 @@
+.homeDisplay {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.content {
+    grid-column: 1;
+}
+
+.aside {
+    grid-column: 2;
+}
