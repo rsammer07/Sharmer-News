@@ -3,10 +3,15 @@
     grid-template-columns: 5fr 1fr;
 }
 
-.content {
-    grid-column: 1;
+#content {
+    grid-column: span 2;
 }
 
-.aside {
+#weatherAside {
     grid-column: 2;
+    display: none;
+}
+
+#contentHeader h2, #contentHeader form{
+    display: inline;
 }

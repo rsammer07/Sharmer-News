@@ -79,22 +79,25 @@ nav {
 .text-link {
   color: #062938;
   text-decoration: none;
-  /* background-color: #ff8d17; */
-}
+  }
 
 .text-link:hover {
   background-color: #062938;
   color: #ff8d17;
   border-radius: 5px;
+  box-shadow: 0 0 5px
 }
 
 .active h3 {
-  background-color: #ff8d17;
-  color: green;
+  background-color: #ff8f17ab;
+  color: #062938;
+  border-radius: 5px;
+  box-shadow: 0 0 5px
 }
 
 nav .active:hover h3 {
-  background-color: purple;
+  background-color: #ff8d17;
+  color: #062938;
 }
 
 @media screen and ( max-width: 850px){
