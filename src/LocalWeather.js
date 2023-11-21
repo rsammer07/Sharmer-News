@@ -22,7 +22,7 @@ function LocalWeather(){
             display.style.border = "2px solid"
         } else {
             setWeather("none")
-            display.style.border = "none"
+            display.style.border = ""
         }
     }
 
