@@ -16,10 +16,13 @@ function LocalWeather(){
     const handleSubmit = (e) => {
         e.preventDefault()
         setZip(zip)
+        let display = document.getElementById('weatherDisplay');
         if (zip.zipcode !== ""){
             getWeather(weatherUrl)
+            display.style.border = "2px solid"
         } else {
             setWeather("none")
+            display.style.border = "none"
         }
     }
 
@@ -44,7 +47,7 @@ function LocalWeather(){
                 <input type="text" placeholder="Zip code" id="zipcode" maxLength={5} size={5} onChange={handleChange}></input>
             </form>
             <button onClick={handleSubmit}>Submit</button>
-            <WeatherDisplay weather={weather} />
+            <div id="weatherDisplay"><WeatherDisplay weather={weather} /></div>
         </div>
     )
 }

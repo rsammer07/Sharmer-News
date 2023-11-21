@@ -23,15 +23,16 @@ function HomeDisplay(){
         <div className='homeDisplay'>
             <div id='content'>
                 <div id="contentHeader">
-                <h2>Your home page        </h2>
-                <form>
-                    <label htmlFor="showWeather">Click here for local weather</label>
-                    <input type="checkbox" 
-                    id="showWeather" 
-                    checked={isClicked}
-                    onChange={handleToggle}
-                    ></input>
-                </form>
+                    <h2>Your home page        </h2>
+                    <form>
+                        <label htmlFor="showWeather">Click here for local weather</label>
+                        <input type="checkbox" 
+                        id="showWeather" 
+                        checked={isClicked}
+                        onChange={handleToggle}
+                        value={isClicked}
+                        ></input>
+                    </form>
                 </div>
                 <p>{filler}</p>
                 <p>{filler}</p>

@@ -9,12 +9,10 @@ function WeatherDisplay({weather}){
     } else {
         return (
             <>
-                <ul>
-                    <li>Current weather in {weather.location.name}:</li>
-                    <li>{weather.current.condition.text}</li>
-                    <img src={weather.current.condition.icon}></img>
-                    <li>Feels like {weather.current.feelslike_f}</li>
-                </ul>
+                <p>Current weather in {weather.location.name}:</p>
+                <p>{weather.current.condition.text}</p>
+                <img src={weather.current.condition.icon}></img>
+                <p>Feels like {weather.current.feelslike_f}</p>
             </>
     )
     }
