@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import './LocalWeather.css'
 import WeatherDisplay from "./WeatherDisplay";
+import env from "react-dotenv"
 
 function LocalWeather(){
-
+    const api_key = env.WEATHER_API_URL
     const [zip, setZip] = useState("00000")
     const [weather, setWeather] = useState("none")
-    let weatherUrl = `http://api.weatherapi.com/v1/current.json?key=c33ae8b0474f40d2bc4175447232011&q=${zip.zipcode}&aqi=no`
-    
+    let weatherUrl = `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${zip.zipcode}&aqi=no`
+    console.log(env)
 
     const handleChange = (e) => {
         setZip({[e.target.id]: e.target.value})
