@@ -4,9 +4,9 @@
   /* display: flex; */
   /* place-items: center; */
   display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
+  grid-template-columns: 1.5fr 7fr 1fr;
   grid-template-rows: 1fr min-content;
-  max-width: 80%;
+  max-width: 90%;
 }
 
 .App-logo {
