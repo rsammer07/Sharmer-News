@@ -1,74 +1,110 @@
-import { useEffect, useState } from "react";
-import { Container } from 'semantic-ui-react'
-import League from "./League"
-import Search from "./Search";
-import env from "react-dotenv"
+import React, { useEffect, useState } from "react";
+import { Container, Table } from "semantic-ui-react";
+import env from "react-dotenv";
 
-
-
-    function SportsStories() {
-
-        const [leagues, setLeagues] = useState([]);
-        const [searchResults, setSearchResults] = useState(null);
-        
-        useEffect(() => {
-            if (leagues){
-          const fetchData = async () => {
-            const url = 'https://api-football-v1.p.rapidapi.com/v3/leagues';
-            const options = {
-              method: 'GET',
-              headers: {
-                'X-RapidAPI-Key': 'ee1459df65msh3c7adce9679a3b4p1f10a2jsn9d64263992ba',
-                'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-              }
-            };
-      
-            try {
-              const response = await fetch(url, options);
-              const result = await response.json();
-            //   console.log(result);
-              setLeagues(result.response)
-              // Handle the result as needed, set state, etc.
-            } catch (error) {
-              console.error(error);
-              // Handle errors, show an error message, etc.
-            }
-          };
-      
-          fetchData();
-        }
-        }, []); // Empty dependency array ensures this effect runs only once on component mount
-        console.log(leagues)
-
-        const handleSearch = (query) => {
-            setLeagues(query); // Set the search query to trigger useEffect
-          };
-    return (
-        <div>
-            <h1>The World of Football</h1>
-
-            <Container>
-                <Search 
-                league = {leagues}
-                handleSearch={handleSearch}
-                 />
-            </Container>
-
-            <Container className="ui container leagueContainer" textAlign='center'>
-            {leagues.length > 0 ? (
-                leagues.map((league) => (
-            <div key={league.league.id}>
-                <img src={league.league.logo} alt={league.league.name} />
-                <p>{league.league.name}</p>
-            </div>
-        ))
-        ) : (
-                <p>No leagues available</p>
-        )}      
-            </Container>
-        </div>
-        
-    )
+function getRowColor(index, teams) {
+  // Adjust these thresholds based on the desired positions for styling
+  if (index < 4) {
+    return "green"; // Top 4 - Champions League qualification
+  } else if (index === 4) {
+    return "blue"; // 5th - Europa League qualification
+  } else if (index >= teams.length - 3) {
+    return "red"; // Bottom 3 - Relegation
+  } else {
+    return ""; // Default color for other positions
+  }
 }
 
-export default SportsStories
+function getCompetitionStatus(index, teams) {
+  if (index < 4) {
+    return "Champions League Qualification";
+  } else if (index === 4) {
+    return "Europa League Qualification";
+  } else if (index >= teams.length - 3) {
+    return "Relegation";
+  } else {
+    return ""; // Default status for other positions
+  }
+}
+
+function SportsStories() {
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const url =
+        "https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/table";
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": env.SPORTS_API_URL,
+          "X-RapidAPI-Host": "heisenbug-premier-league-live-scores-v1.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        setTeams(result.records);
+      } catch (error) {
+        console.error(error);
+        // Optionally handle the error state, e.g., setTeams([]) or show an error message.
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>English Premier League</h1>
+
+      <Container className="ui container teamContainer" textAlign="center">
+        {teams && teams.length > 0 ? (
+          <div>
+            <Table celled>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Team</Table.HeaderCell>
+                  <Table.HeaderCell>Played</Table.HeaderCell>
+                  <Table.HeaderCell>Win</Table.HeaderCell>
+                  <Table.HeaderCell>Draw</Table.HeaderCell>
+                  <Table.HeaderCell>Loss</Table.HeaderCell>
+                  <Table.HeaderCell>Goals For</Table.HeaderCell>
+                  <Table.HeaderCell>Goals Against</Table.HeaderCell>
+                  <Table.HeaderCell>Points</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                {teams.map((team, index) => (
+                  <Table.Row
+                    key={team.team}
+                    style={{ background: getRowColor(index, teams) }}
+                  >
+                    <Table.Cell>{team.team}</Table.Cell>
+                    <Table.Cell>{team.played}</Table.Cell>
+                    <Table.Cell>{team.win}</Table.Cell>
+                    <Table.Cell>{team.draw}</Table.Cell>
+                    <Table.Cell>{team.loss}</Table.Cell>
+                    <Table.Cell>{team.goalsFor}</Table.Cell>
+                    <Table.Cell>{team.goalsAgainst}</Table.Cell>
+                    <Table.Cell>{team.points}</Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+            <div>
+              <p style={{ color: "green" }}>Champions League Qualification</p>
+              <p style={{ color: "blue" }}>Europa League Qualification</p>
+              <p style={{ color: "red" }}>Relegation</p>
+            </div>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </Container>
+    </div>
+  );
+}
+
+export default SportsStories;
