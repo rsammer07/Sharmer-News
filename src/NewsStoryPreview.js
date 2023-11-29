@@ -1,8 +1,13 @@
 import React from "react";
 
-function NewsStoryPreview(){
+function NewsStoryPreview(story){
+
+    // console.log(story.newsOne.articles[0]);
+
     return (
-        <p>one</p>
+        <div className="newsDisplay">
+            <div className="newsPreview">{story}</div>
+        </div>
     )
 }
 

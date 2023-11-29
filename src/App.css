@@ -114,4 +114,8 @@ nav .active:hover h3 {
   .App-header {
     display: flex;
   }
+
+  .navbar {
+    padding: 0 10px 0 0;
+  }
 }

@@ -9,7 +9,6 @@ function LocalWeather(){
     const [weather, setWeather] = useState("none")
     let weatherUrl = `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${zip.zipcode}&aqi=no`
     console.log(env)
-
     const handleChange = (e) => {
         setZip({[e.target.id]: e.target.value})
     }
