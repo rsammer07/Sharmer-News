@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import './Sports.css'
 import { Container, Table } from "semantic-ui-react";
 import env from "react-dotenv";
+import RefStats from "./RefStats"
+import TodaysGames from "./NflScores";
+
 
 function getRowColor(index, teams) {
   // Adjust these thresholds based on the desired positions for styling
@@ -14,18 +18,8 @@ function getRowColor(index, teams) {
     return ""; // Default color for other positions
   }
 }
-
-function getCompetitionStatus(index, teams) {
-  if (index < 4) {
-    return "Champions League Qualification";
-  } else if (index === 4) {
-    return "Europa League Qualification";
-  } else if (index >= teams.length - 3) {
-    return "Relegation";
-  } else {
-    return ""; // Default status for other positions
-  }
-}
+let currentDate = new Date();
+console.log(currentDate);
 
 function SportsStories() {
   const [teams, setTeams] = useState([]);
@@ -56,9 +50,9 @@ function SportsStories() {
   }, []);
 
   return (
-    <div>
+    <div className="SportsContainer">
       <h1>English Premier League</h1>
-
+    <div className="prem" id="PremTable">
       <Container className="ui container teamContainer" textAlign="center">
         {teams && teams.length > 0 ? (
           <div>
@@ -103,6 +97,20 @@ function SportsStories() {
           <p>Loading...</p>
         )}
       </Container>
+      </div>
+
+      <h2>Want more in depth stats, transfer news and injury reports?</h2>
+      <a href="https://www.fotmob.com/leagues/47/news/premier-league">
+        <h3>Click Here!</h3>
+      </a>
+
+      <div className="ref" id="refContainer">
+      <RefStats />
+      </div>
+
+      <div className="right" id="NflRight">
+      <TodaysGames />
+      </div>
     </div>
   );
 }
