@@ -16,3 +16,7 @@
 #contentHeader h2, #contentHeader form{
     display: inline;
 }
+
+#contentHeader {
+    padding-bottom: 40px;
+}
