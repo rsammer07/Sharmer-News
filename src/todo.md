@@ -1,6 +1,4 @@
 Qs:  
-
-
--connect to APIs  
--display items from api on relevant components  
--format so component shows stories in good format  
+-Change all news components to have the modal functionality  
+   
+-use framer motion for animations

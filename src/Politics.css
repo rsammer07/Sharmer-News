@@ -4,6 +4,7 @@
     width: 200px;
     color: black;
     padding: 5px;
+    background-color: white;
 }
 
 .title {
@@ -19,4 +20,36 @@
 
 .newsPreview a {
     text-decoration: none;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #06293885;
+    z-index: 10;
+  }
+
+.modal {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+.exitButton {
+    top: 0px;
+    left: 15px;
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
