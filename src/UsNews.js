@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import NewsStoryPreview from "./NewsStoryPreview"
 import './Politics.css';
 import env from "react-dotenv"
 import { motion,AnimatePresence } from "framer-motion"
