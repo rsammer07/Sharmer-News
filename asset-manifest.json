@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Sharmer-News/static/css/main.0c35df20.css",
-    "main.js": "/Sharmer-News/static/js/main.cfe9a0aa.js",
+    "main.css": "/Sharmer-News/static/css/main.9082c4eb.css",
+    "main.js": "/Sharmer-News/static/js/main.d2b6bad6.js",
     "static/media/logo2.png": "/Sharmer-News/static/media/logo2.9b2571b67b97030e041c.png",
     "static/media/masthead.png": "/Sharmer-News/static/media/masthead.ff25e2537bad0eaeef80.png",
     "index.html": "/Sharmer-News/index.html",
-    "main.0c35df20.css.map": "/Sharmer-News/static/css/main.0c35df20.css.map",
-    "main.cfe9a0aa.js.map": "/Sharmer-News/static/js/main.cfe9a0aa.js.map"
+    "main.9082c4eb.css.map": "/Sharmer-News/static/css/main.9082c4eb.css.map",
+    "main.d2b6bad6.js.map": "/Sharmer-News/static/js/main.d2b6bad6.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c35df20.css",
-    "static/js/main.cfe9a0aa.js"
+    "static/css/main.9082c4eb.css",
+    "static/js/main.d2b6bad6.js"
   ]
 }
