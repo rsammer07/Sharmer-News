@@ -12,7 +12,7 @@ function RefStats() {
       const options = {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key": env.SPORTS_API_URL,
+          "X-RapidAPI-Key": "ee1459df65msh3c7adce9679a3b4p1f10a2jsn9d64263992ba",
           "X-RapidAPI-Host": "heisenbug-premier-league-live-scores-v1.p.rapidapi.com",
         },
       };
