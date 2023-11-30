@@ -1,13 +1,11 @@
 Sharmer News App:  
-A Single Page Application which navigates using React Router, and displays news stories pulled via APIs and renders them as components  
+A Single Page Application which navigates using React Router, and displays news stories pulled via APIs and renders them as components.  
+-Pulls several APIs to display individual news stories which appear as modals and link to full website.  
+-Pulls EPL API to display current team standings. Also pulls an API for current NFL game results.  
+-Enter local zip code to display current weather conditions on home page.  
   
 Ideas:  
-Find my weather by entering zip code into form  
-Click x on a story to eliminate it and pull a different one  
-Add additional pages/sub pages  
-Can scroll down - but only the display component scrolls, the rest stay anchored  
-Fun fact of the day/on this day in history component (with close button option. API only pulls every 24h)  
-Better ideas for a useful form?  
+-use framer motion for animations  
 Make responsive to screen size changes: make nav bar into button, display only 1 story for width, etc.  
 
  
