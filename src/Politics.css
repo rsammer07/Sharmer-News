@@ -33,14 +33,22 @@
   }
 
 .modal {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 500px;
+    max-height: 300px;
+    padding: 10px 20px 50px;
     background: white;
-    border-radius: 10px;
+    border-radius: 30px;
     position: absolute;
     top: 20%;
     left: 30%;
+}
+
+#modalTitle {
+    font-weight: bold;
+}
+
+#modalPicture {
+    margin-left: 187px;
 }
 
 .exitButton {

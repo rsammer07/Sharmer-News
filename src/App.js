@@ -1,4 +1,5 @@
 import { NavLink, Link, Route, Routes, Navigate } from "react-router-dom";
+import React, {useState} from "react";
 import './App.css';
 import logo from "./logo2.png"
 import masthead from "./masthead.png"
@@ -14,12 +15,21 @@ import {motion, AnimatePresence} from 'framer-motion';
 function App() {
 
   const nyt_api_key = env.NYT_API_KEY
+  const [showModal, setShowModal] = useState(false)
+  const [currentStory, setCurrentStory] = useState(null)
+
+  function onClick(story){
+    setShowModal((prevState => ({
+        check: !prevState.check
+      })));
+    setCurrentStory(story);
+}
 
   let routes = (
     
     <Routes>
-        <Route path="/home" element={<HomeDisplay nyt_api_key={nyt_api_key}/>}/>
-        <Route path="/usnews" element={<UsNews nyt_api_key={nyt_api_key}/>}/>
+        <Route path="/home" element={<HomeDisplay nyt_api_key={nyt_api_key} currentStory={currentStory} showModal={showModal} setShowModal={setShowModal} setCurrentStory={setCurrentStory} onClick={onClick}/>}/>
+        <Route path="/usnews" element={<UsNews nyt_api_key={nyt_api_key} currentStory={currentStory} showModal={showModal} setShowModal={setShowModal} setCurrentStory={setCurrentStory} onClick={onClick}/>}/>
         <Route path="/worldnews" element={<WorldNews nyt_api_key={nyt_api_key}/>}/>
         <Route path="/sports" element={<SportsStories />}/>
         <Route path="*" element={ <Navigate to="/home" replace/>}/>

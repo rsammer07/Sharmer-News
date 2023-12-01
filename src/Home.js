@@ -2,13 +2,22 @@ import React, { useState, useEffect } from "react";
 import './Home.css';
 import LocalWeather from './LocalWeather'
 import env from "react-dotenv"
+import Modal from "./modal"
 
 function HomeDisplay(nyt_api_key){
     const [isClicked, setIsClicked] = useState(false)
     const [homeNews, setHomeNews] = useState([])
+    const [showModal, setShowModal] = useState(false)
+    const [currentStory, setCurrentStory] = useState(null)
 
     const nytApiUrl = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=V2BhXAwqkGP6N5nlwlAGa6ycusZ5JEJh`
 
+    function onClick(story){
+        setShowModal((prevState => ({
+            check: !prevState.check
+          })));
+        setCurrentStory(story);
+    }
 
     function handleToggle(){
         setIsClicked(!isClicked)
@@ -51,13 +60,16 @@ function HomeDisplay(nyt_api_key){
                 <div className='newsDisplay'>
                 {homeNews.length > 0 && homeNews.map((story) => {
                     return(
-                    <a href={story.url}><div className='newsPreview'>
+                    <div className='newsPreview' onClick={() => {onClick(story)}}>
                         <p className='title'>{story.title}</p>
                         <img src={story.multimedia[2].url} alt={story.multimedia[2].caption}></img>
                         <p className='storyPreview'>{story.abstract}</p>
-                    </div></a>
+                    </div>
                     )                    
                 })}
+                {showModal && (
+                        <Modal currentStory={currentStory} showModal={showModal} setShowModal={setShowModal}/>
+                    )}
         </div>
             </div>
             <div className='aside' id="weatherAside">

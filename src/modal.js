@@ -10,8 +10,8 @@ const backdrop = {
 const modal = {
     hidden: {opacity: 0},
     visible: {opacity: 1},
-    transition: {delay: 0.2}
-}
+    transition: {delay: 0.2},
+    }
 
 const Modal = ({showModal, setShowModal, currentStory}) => {
     return (
@@ -26,11 +26,13 @@ const Modal = ({showModal, setShowModal, currentStory}) => {
                 >
                     <motion.div className='modal'
                     variants={modal}
+                    exitBeforeEnter= {true}
+                    onExitComplete={() => null}
                     >
                         <button className='exitButton' onClick={() => setShowModal(false)}>x</button>
                         <a href={currentStory.url}>
-                        <p className='title'>{currentStory.title}</p>
-                        <img src={currentStory.multimedia[2].url} alt={currentStory.multimedia[2].caption}></img>
+                        <p className='title' id='modalTitle'>{currentStory.title}</p>
+                        <img src={currentStory.multimedia[2].url} id='modalPicture' alt={currentStory.multimedia[2].caption}></img>
                         <p className='storyPreview'>{currentStory.abstract}</p>
                         </a>
                     </motion.div>
