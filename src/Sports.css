@@ -1,4 +1,57 @@
-SportsContainer {
+.SportsContainer {
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    /* grid-template-columns: 5fr 1fr; */
+    grid-template-areas: "prem nfl" "fotmob nfl" "ref nfl";
+    text-align: center;
+    margin-left: 200px;
+}
+
+.prem {
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+}
+
+
+.premTable {
+    grid-area: prem;
+    background-color: black;
+    color: white;
+    margin-left: 190px;
+}
+
+.fotmob {
+    grid-area: fotmob;
+    border: 1px solid;
+    /* margin-right: 10px; */
+    background-color: green;
+}
+
+.ref {
+    background-color: gray;
+    color: white;
+}
+
+.refStats {
+    border: 1px solid;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    margin-left: 45px;
+}
+
+.nfl {
+    text-align: center;
+    color: white;
+    grid-area: nfl;
+    border: 1px solid;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: black;
+}
+
+.values {
+    background-color: black;
+    text-align:inherit
 }

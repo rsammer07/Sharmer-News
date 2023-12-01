@@ -24,21 +24,19 @@ function RefStats() {
         setRefs(result.referees);
       } catch (error) {
         console.error(error);
-        // Optionally handle the error state, e.g., setRefs([]) or show an error message.
       }
     };
 
     fetchData();
   }, []);
 
-  console.log(refs);
 
   return (
     <div>
       <h1>Referee Stats for the 23-24 Season</h1>
       <Container className="ui container refereeContainer" textAlign="center">
         {refs && refs.length > 0 ? (
-          <Table celled>
+          <Table celled  className="refStats">
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Referee</Table.HeaderCell>

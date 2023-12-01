@@ -1,0 +1,33 @@
+.NflScores {
+    display: grid;
+    background-color: black;
+    color: white;
+}
+
+.nflTable {
+    text-align: center;
+    grid-template-areas:
+    "awayTeam homeTeam"
+    "awayScore homeScore"
+    "status status";
+}
+
+.awayTeam {
+    grid-area: awayTeam;
+}
+
+.awayScore {
+    grid-area: awayScore;
+}
+
+.homeTeam {
+    grid-area: homeTeam;
+}
+
+.homeScore {
+    grid-area: homeScore;
+}
+
+.status {
+    grid-area: status;
+}
