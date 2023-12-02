@@ -39,29 +39,29 @@ function RefStats() {
           <Table celled  className="refStats">
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Referee</Table.HeaderCell>
-                <Table.HeaderCell>Games</Table.HeaderCell>
-                <Table.HeaderCell>Home Wins</Table.HeaderCell>
-                <Table.HeaderCell>Draws</Table.HeaderCell>
-                <Table.HeaderCell>Away Wins</Table.HeaderCell>
-                <Table.HeaderCell>Home Goals</Table.HeaderCell>
-                <Table.HeaderCell>Away Goals</Table.HeaderCell>
-                <Table.HeaderCell>Home Red Cards</Table.HeaderCell>
-                <Table.HeaderCell>Away Red Cards</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Referee</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Games</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Home Wins</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Draws</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Away Wins</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Home Goals</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Away Goals</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Home Red Cards</Table.HeaderCell>
+                <Table.HeaderCell className="refCell">Away Red Cards</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
               {refs.map((ref, index) => (
                 <Table.Row key={index}>
-                  <Table.Cell>{ref.referee}</Table.Cell>
-                  <Table.Cell>{ref.games}</Table.Cell>
-                  <Table.Cell>{ref.homewin}</Table.Cell>
-                  <Table.Cell>{ref.draw}</Table.Cell>
-                  <Table.Cell>{ref.awaywin}</Table.Cell>
-                  <Table.Cell>{ref.homegoals}</Table.Cell>
-                  <Table.Cell>{ref.awaygoals}</Table.Cell>
-                  <Table.Cell>{ref.homeredcards}</Table.Cell>
-                  <Table.Cell>{ref.awayredcards}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.referee}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.games}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.homewin}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.draw}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.awaywin}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.homegoals}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.awaygoals}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.homeredcards}</Table.Cell>
+                  <Table.Cell className="refCell">{ref.awayredcards}</Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>

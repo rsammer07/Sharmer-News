@@ -166,12 +166,22 @@ function TodaysGames() {
       <Container className="ui container NFLContainer" textAlign="center">
         {games && games.length > 0 ? (
           <Table celled className="nflTable">
-            <Table.Body>
+            <Table.Header>
               {games.map((game, index) => (
                 <Table.Row key={index}>
                   <Table.Cell className="awayTeam">{game.teams.away.team}</Table.Cell>
-                  <Table.Cell className="awayScore">{game.scoreboard.score.away}</Table.Cell>
                   <Table.Cell className="homeTeam">{game.teams.home.team}</Table.Cell>
+                  <Table.Cell className="status">Status</Table.Cell>
+                  </Table.Row>
+              ))}
+            
+            </Table.Header>
+            <Table.Body>
+              {games.map((game, index) => (
+                <Table.Row key={index}>
+                  {/* <Table.Cell className="awayTeam">{game.teams.away.team}</Table.Cell> */}
+                  <Table.Cell className="awayScore">{game.scoreboard.score.away}</Table.Cell>
+                  {/* <Table.Cell className="homeTeam">{game.teams.home.team}</Table.Cell> */}
                   <Table.Cell className="homeScore">{game.scoreboard.score.home}</Table.Cell>
                   <Table.Cell className="status">{game.status}</Table.Cell>
                 </Table.Row>
