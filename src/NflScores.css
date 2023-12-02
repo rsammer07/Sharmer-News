@@ -10,24 +10,33 @@
     "awayTeam homeTeam"
     "awayScore homeScore"
     "status status";
+    border: 1px white;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin-left: 20px;
 }
 
 .awayTeam {
     grid-area: awayTeam;
+    border: 1px solid green;
 }
 
 .awayScore {
     grid-area: awayScore;
+    border: 1px solid green;
 }
 
 .homeTeam {
     grid-area: homeTeam;
+    border: 1px solid green;
 }
 
 .homeScore {
     grid-area: homeScore;
+    border: 1px solid green;
 }
 
 .status {
     grid-area: status;
+    border: 1px solid black;
 }

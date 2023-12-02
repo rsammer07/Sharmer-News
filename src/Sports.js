@@ -60,14 +60,14 @@ function SportsStories() {
                 <Table celled className="premTable">
                   <Table.Header>
                     <Table.Row>
-                      <Table.HeaderCell>Team</Table.HeaderCell>
-                      <Table.HeaderCell>Played</Table.HeaderCell>
-                      <Table.HeaderCell>Win</Table.HeaderCell>
-                      <Table.HeaderCell>Draw</Table.HeaderCell>
-                      <Table.HeaderCell>Loss</Table.HeaderCell>
-                      <Table.HeaderCell>Goals For</Table.HeaderCell>
-                      <Table.HeaderCell>Goals Against</Table.HeaderCell>
-                      <Table.HeaderCell>Points</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Team</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Played</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Win</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Draw</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Loss</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Goals For</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Goals Against</Table.HeaderCell>
+                      <Table.HeaderCell className="premCell">Points</Table.HeaderCell>
                     </Table.Row>
                   </Table.Header>
                   <Table.Body>
@@ -76,14 +76,14 @@ function SportsStories() {
                         key={team.team}
                         style={{ background: getRowColor(index, teams) }}
                       >
-                        <Table.Cell>{team.team}</Table.Cell>
-                        <Table.Cell>{team.played}</Table.Cell>
-                        <Table.Cell>{team.win}</Table.Cell>
-                        <Table.Cell>{team.draw}</Table.Cell>
-                        <Table.Cell>{team.loss}</Table.Cell>
-                        <Table.Cell>{team.goalsFor}</Table.Cell>
-                        <Table.Cell>{team.goalsAgainst}</Table.Cell>
-                        <Table.Cell>{team.points}</Table.Cell>
+                        <Table.Cell className="premCell">{team.team}</Table.Cell>
+                        <Table.Cell className="premCell">{team.played}</Table.Cell>
+                        <Table.Cell className="premCell">{team.win}</Table.Cell>
+                        <Table.Cell className="premCell">{team.draw}</Table.Cell>
+                        <Table.Cell className="premCell">{team.loss}</Table.Cell>
+                        <Table.Cell className="premCell">{team.goalsFor}</Table.Cell>
+                        <Table.Cell className="premCell">{team.goalsAgainst}</Table.Cell>
+                        <Table.Cell className="premCell">{team.points}</Table.Cell>
                       </Table.Row>
                     ))}
                   </Table.Body>

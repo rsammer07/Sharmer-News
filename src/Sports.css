@@ -55,3 +55,11 @@
     background-color: black;
     text-align:inherit
 }
+
+.premCell {
+    border: 1px solid gray;
+}
+
+.refCell {
+    border: 1px solid gray;
+}

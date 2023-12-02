@@ -37,7 +37,7 @@ function UsNews(nyt_api_key){
                         <>
                         <div className='newsPreview' onClick={() => {onClick(story)}}>
                             <p className='title'>{story.title}</p>
-                            <img src={story.multimedia[2].url} alt={story.multimedia[2].caption}></img>
+                            {/* <img src={story.multimedia[2].url} alt={story.multimedia[2].caption}></img> */}
                             <p className='storyPreview'>{story.abstract}</p>
                         </div>
                         </>
